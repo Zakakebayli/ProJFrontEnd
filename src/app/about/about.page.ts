@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.page.html',
-  styleUrls: ['./about.page.scss'],
+  standalone: true, // Marked as standalone component
+  imports: [IonicModule, CommonModule], // Required modules for Ionic components
 })
-export class AboutPage implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class AboutPage {}

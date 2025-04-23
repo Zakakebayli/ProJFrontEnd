@@ -1,25 +1,23 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+// Define the routes for the app
 const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
-  },
-  {
-    path: 'about', // Make sure the About page exists in 'src/app/about/about.module.ts'
-    loadChildren: () => import('./about/about.module').then(m => m.AboutPageModule)
-  },
   {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full'
+    pathMatch: 'full' // Redirect empty path to home
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule) // Lazy load HomePageModule
   },
   {
     path: 'about',
-    loadChildren: () => import('./about/about.module').then( m => m.AboutPageModule)
-  },
+    loadComponent: () => import('./about/about.page').then(m => m.AboutPage) // Standalone AboutPage
+  }
 ];
+
 
 @NgModule({
   imports: [
@@ -27,4 +25,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

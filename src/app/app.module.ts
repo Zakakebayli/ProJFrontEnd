@@ -1,15 +1,12 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { AboutPage } from './about.page';
+import { BrowserModule } from '@angular/platform-browser';
 import { IonicModule } from '@ionic/angular';
-import { AboutPageRoutingModule } from './about-routing.module';  // Import the routing module
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    IonicModule,
-    AboutPageRoutingModule  // Include the routing module here
-  ],
-  declarations: [AboutPage],  // Declare the AboutPage component here
+  declarations: [AppComponent],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  bootstrap: [AppComponent],
 })
-export class AboutPageModule {}
+export class AppModule {}
