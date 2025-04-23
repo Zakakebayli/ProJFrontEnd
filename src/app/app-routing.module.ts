@@ -15,9 +15,16 @@ const routes: Routes = [
   {
     path: 'about',
     loadComponent: () => import('./about/about.page').then(m => m.AboutPage) // Standalone AboutPage
+  },
+  {
+    path: 'contact',
+    loadComponent: () => import('./contact/contact.page').then(m => m.ContactPage) // Standalone ContactPage
+  },
+  {
+    path: 'settings',
+    loadComponent: () => import('./settings/settings.page').then(m => m.SettingsPage) // Standalone SettingsPage
   }
 ];
-
 
 @NgModule({
   imports: [
