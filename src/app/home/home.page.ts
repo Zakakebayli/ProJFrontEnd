@@ -7,7 +7,12 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class HomePage {
+  pageTitle: string = 'Welcome to the Home Page';
+  userInput: string = 'Default text';
 
   constructor() {}
 
+  updateUserInput(value: string) {
+    this.userInput = value;
+  }
 }
